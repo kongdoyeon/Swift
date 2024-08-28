@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import { View, TextInput, StyleSheet, TouchableOpacity, Text } from 'react-native';
+import { useRouter } from 'expo-router';  // expo-router의 useRouter 사용
 
 const PasswordInputScreen = () => {
   const [password, setPassword] = useState('');
 
   const isNextEnabled = password.length > 0; // 비밀번호 입력 여부에 따른 활성화 상태
+  const router = useRouter();  // router 객체 가져오기
 
   return (
     <View style={styles.container}>
@@ -39,7 +41,7 @@ const PasswordInputScreen = () => {
           ]}
           onPress={() => {
             if (isNextEnabled) {
-              // 다음 단계로 이동하는 로직 추가
+              router.push('/(pages)/login3'); // login3 페이지로 이동
             }
           }}
           disabled={!isNextEnabled} // 입력되지 않으면 버튼 비활성화

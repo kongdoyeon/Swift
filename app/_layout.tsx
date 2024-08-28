@@ -5,23 +5,13 @@ import { Stack } from 'expo-router';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import 'react-native-reanimated';
-import LoginScreen from './(tabs)/login';
-
-import Login1Screen from './(pages)/login1';
-
 import { useColorScheme } from '@/components/useColorScheme';
 
 export {
-  // Catch any errors thrown by the Layout component.
   ErrorBoundary,
 } from 'expo-router';
+    
 
-export const unstable_settings = {
-  // Ensure that reloading on `/modal` keeps a back button present.w
-  initialRouteName: '(tabs)',
-};
-
-// Prevent the splash screen from auto-hiding before asset loading is complete.
 SplashScreen.preventAutoHideAsync();
 
 export default function RootLayout() {
@@ -30,7 +20,6 @@ export default function RootLayout() {
     ...FontAwesome.font,
   });
 
-  // Expo Router uses Error Boundaries to catch errors in the navigation tree.
   useEffect(() => {
     if (error) throw error;
   }, [error]);
@@ -58,6 +47,8 @@ function RootLayoutNav() {
         <Stack.Screen name="modal" options={{ presentation: 'modal' }} />
         <Stack.Screen name="(tabs)/login" options={{ title: 'Login Screen' }} />
         <Stack.Screen name="(pages)/login1" options={{ title: 'Sign Up Screen' }} />
+        <Stack.Screen name="(pages)/login3" options={{ title: 'Name Input Screen' }} /> 
+          <Stack.Screen name="(pages)/login4" options={{ title: 'Gender Select Screen' }} />
       </Stack>
     </ThemeProvider>
   );

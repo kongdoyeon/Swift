@@ -70,7 +70,7 @@ const LoginScreen = () => {
         
         <TouchableOpacity
           style={styles.signupButton}
-          onPress={() => router.push('/(pages)/login1')}
+          onPress={() => router.push('/(pages)/login2')}
         >
           <Text style={styles.buttonText}>회원가입</Text>
         </TouchableOpacity>
@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   buttonText: {
     color: '#fff', // 기본 텍스트 색상 흰색
-    fontSize: 24,
+    fontSize: 20,
     fontWeight: 'bold',
   },
   activeButtonText: {
